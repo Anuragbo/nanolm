@@ -1,0 +1,39 @@
+[sweep] char_models: 12 runs (0 already done) -> /Users/anurag_bodapally/local_folders/DL_assignment/DeepDataMiningLearning/DeepDataMiningLearning/llm/outputs/nanolm/sweeps/char_models
+   rnn                          seed=1337   train.max_steps=2000 train.seq_len=256 train.batch_size=32 model.arch="rnn" model.n_layers=2 model.dim=256 train.lr="2e-3" train.weight_decay=0.0
+   rnn                          seed=42     train.max_steps=2000 train.seq_len=256 train.batch_size=32 model.arch="rnn" model.n_layers=2 model.dim=256 train.lr="2e-3" train.weight_decay=0.0
+   gru                          seed=1337   train.max_steps=2000 train.seq_len=256 train.batch_size=32 model.arch="gru" model.n_layers=2 model.dim=256 train.lr="2e-3" train.weight_decay=0.0
+   gru                          seed=42     train.max_steps=2000 train.seq_len=256 train.batch_size=32 model.arch="gru" model.n_layers=2 model.dim=256 train.lr="2e-3" train.weight_decay=0.0
+   lstm                         seed=1337   train.max_steps=2000 train.seq_len=256 train.batch_size=32 model.arch="lstm" model.n_layers=2 model.dim=256 train.lr="2e-3" train.weight_decay=0.0
+   lstm                         seed=42     train.max_steps=2000 train.seq_len=256 train.batch_size=32 model.arch="lstm" model.n_layers=2 model.dim=256 train.lr="2e-3" train.weight_decay=0.0
+   lstm_512                     seed=1337   train.max_steps=2000 train.seq_len=256 train.batch_size=32 model.arch="lstm" model.n_layers=2 model.dim=512 train.lr="2e-3" train.weight_decay=0.0
+   lstm_512                     seed=42     train.max_steps=2000 train.seq_len=256 train.batch_size=32 model.arch="lstm" model.n_layers=2 model.dim=512 train.lr="2e-3" train.weight_decay=0.0
+   gpt_textbook                 seed=1337   train.max_steps=2000 train.seq_len=256 train.batch_size=32
+   gpt_textbook                 seed=42     train.max_steps=2000 train.seq_len=256 train.batch_size=32
+   gpt_modern                   seed=1337   train.max_steps=2000 train.seq_len=256 train.batch_size=32 model.norm="rmsnorm" model.pos="rope" model.mlp="swiglu" model.bias=false
+   gpt_modern                   seed=42     train.max_steps=2000 train.seq_len=256 train.batch_size=32 model.norm="rmsnorm" model.pos="rope" model.mlp="swiglu" model.bias=false
+[sweep] start rnn s1337 on default device
+[sweep] done  rnn s1337 | val_bpb 2.4412 | 2.9 min elapsed
+[sweep] start rnn s42 on default device
+[sweep] done  rnn s42 | val_bpb 2.4323 | 5.8 min elapsed
+[sweep] start gru s1337 on default device
+[sweep] done  gru s1337 | val_bpb 2.1610 | 10.6 min elapsed
+[sweep] start gru s42 on default device
+[sweep] done  gru s42 | val_bpb 2.1584 | 15.5 min elapsed
+[sweep] start lstm s1337 on default device
+[sweep] done  lstm s1337 | val_bpb 2.1340 | 16.7 min elapsed
+[sweep] start lstm s42 on default device
+[sweep] done  lstm s42 | val_bpb 2.1404 | 17.9 min elapsed
+[sweep] start lstm_512 s1337 on default device
+[sweep] done  lstm_512 s1337 | val_bpb 2.1760 | 20.7 min elapsed
+[sweep] start lstm_512 s42 on default device
+[sweep] done  lstm_512 s42 | val_bpb 2.1642 | 23.4 min elapsed
+[sweep] start gpt_textbook s1337 on default device
+[sweep] done  gpt_textbook s1337 | val_bpb 2.1864 | 25.9 min elapsed
+[sweep] start gpt_textbook s42 on default device
+[sweep] done  gpt_textbook s42 | val_bpb 2.1841 | 28.3 min elapsed
+[sweep] start gpt_modern s1337 on default device
+[sweep] done  gpt_modern s1337 | val_bpb 2.1166 | 31.6 min elapsed
+[sweep] start gpt_modern s42 on default device
+[sweep] done  gpt_modern s42 | val_bpb 2.1152 | 34.9 min elapsed
+[sweep] finished (0 failed in this process). Analyze with:
+   python -m nanolm.analyze /Users/anurag_bodapally/local_folders/DL_assignment/DeepDataMiningLearning/DeepDataMiningLearning/llm/outputs/nanolm/sweeps/char_models

@@ -1,0 +1,30 @@
+# HW1 Task 3 -- context length: LSTM vs modern Transformer at train.seq_len = 64, 128, 256, 512.
+# Fair budget: tokens/step held at 8,192 (batch_size x seq_len) and 2,000 steps -> 16.4M tokens for every run,
+# so ONLY the context length changes. Evaluation uses the same context (eval.eval_seq_len = 0 -> train.seq_len).
+# The LSTM uses exactly the Task 2 settings (sweeps/01_char_models.yaml, run "lstm").
+name: hw1_context
+base: ../laptop/L2_char_gpt.yaml          # modern char Transformer (RMSNorm + RoPE + SwiGLU), 4 x 256
+seeds: [1337, 42]
+common:
+  train.max_steps: 2000
+runs:
+  - name: gpt_ctx64
+    overrides: {train.seq_len: 64, train.batch_size: 128}
+  - name: gpt_ctx128
+    overrides: {train.seq_len: 128, train.batch_size: 64}
+  - name: gpt_ctx256
+    overrides: {train.seq_len: 256, train.batch_size: 32}
+  - name: gpt_ctx512
+    overrides: {train.seq_len: 512, train.batch_size: 16}
+  - name: lstm_ctx64
+    overrides: {model.arch: lstm, model.n_layers: 2, model.dim: 256, train.lr: 2e-3, train.weight_decay: 0.0,
+                train.seq_len: 64, train.batch_size: 128}
+  - name: lstm_ctx128
+    overrides: {model.arch: lstm, model.n_layers: 2, model.dim: 256, train.lr: 2e-3, train.weight_decay: 0.0,
+                train.seq_len: 128, train.batch_size: 64}
+  - name: lstm_ctx256
+    overrides: {model.arch: lstm, model.n_layers: 2, model.dim: 256, train.lr: 2e-3, train.weight_decay: 0.0,
+                train.seq_len: 256, train.batch_size: 32}
+  - name: lstm_ctx512
+    overrides: {model.arch: lstm, model.n_layers: 2, model.dim: 256, train.lr: 2e-3, train.weight_decay: 0.0,
+                train.seq_len: 512, train.batch_size: 16}

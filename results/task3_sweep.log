@@ -1,0 +1,51 @@
+[sweep] hw1_context: 16 runs (0 already done) -> /Users/anurag_bodapally/local_folders/DL_assignment/DeepDataMiningLearning/DeepDataMiningLearning/llm/outputs/nanolm/sweeps/hw1_context
+   gpt_ctx64                    seed=1337   train.max_steps=2000 train.seq_len=64 train.batch_size=128
+   gpt_ctx64                    seed=42     train.max_steps=2000 train.seq_len=64 train.batch_size=128
+   gpt_ctx128                   seed=1337   train.max_steps=2000 train.seq_len=128 train.batch_size=64
+   gpt_ctx128                   seed=42     train.max_steps=2000 train.seq_len=128 train.batch_size=64
+   gpt_ctx256                   seed=1337   train.max_steps=2000 train.seq_len=256 train.batch_size=32
+   gpt_ctx256                   seed=42     train.max_steps=2000 train.seq_len=256 train.batch_size=32
+   gpt_ctx512                   seed=1337   train.max_steps=2000 train.seq_len=512 train.batch_size=16
+   gpt_ctx512                   seed=42     train.max_steps=2000 train.seq_len=512 train.batch_size=16
+   lstm_ctx64                   seed=1337   train.max_steps=2000 model.arch="lstm" model.n_layers=2 model.dim=256 train.lr="2e-3" train.weight_decay=0.0 train.seq_len=64 train.batch_size=128
+   lstm_ctx64                   seed=42     train.max_steps=2000 model.arch="lstm" model.n_layers=2 model.dim=256 train.lr="2e-3" train.weight_decay=0.0 train.seq_len=64 train.batch_size=128
+   lstm_ctx128                  seed=1337   train.max_steps=2000 model.arch="lstm" model.n_layers=2 model.dim=256 train.lr="2e-3" train.weight_decay=0.0 train.seq_len=128 train.batch_size=64
+   lstm_ctx128                  seed=42     train.max_steps=2000 model.arch="lstm" model.n_layers=2 model.dim=256 train.lr="2e-3" train.weight_decay=0.0 train.seq_len=128 train.batch_size=64
+   lstm_ctx256                  seed=1337   train.max_steps=2000 model.arch="lstm" model.n_layers=2 model.dim=256 train.lr="2e-3" train.weight_decay=0.0 train.seq_len=256 train.batch_size=32
+   lstm_ctx256                  seed=42     train.max_steps=2000 model.arch="lstm" model.n_layers=2 model.dim=256 train.lr="2e-3" train.weight_decay=0.0 train.seq_len=256 train.batch_size=32
+   lstm_ctx512                  seed=1337   train.max_steps=2000 model.arch="lstm" model.n_layers=2 model.dim=256 train.lr="2e-3" train.weight_decay=0.0 train.seq_len=512 train.batch_size=16
+   lstm_ctx512                  seed=42     train.max_steps=2000 model.arch="lstm" model.n_layers=2 model.dim=256 train.lr="2e-3" train.weight_decay=0.0 train.seq_len=512 train.batch_size=16
+[sweep] start gpt_ctx64 s1337 on default device
+[sweep] done  gpt_ctx64 s1337 | val_bpb 2.1558 | 2.9 min elapsed
+[sweep] start gpt_ctx64 s42 on default device
+[sweep] done  gpt_ctx64 s42 | val_bpb 2.1567 | 5.7 min elapsed
+[sweep] start gpt_ctx128 s1337 on default device
+[sweep] done  gpt_ctx128 s1337 | val_bpb 2.1072 | 8.8 min elapsed
+[sweep] start gpt_ctx128 s42 on default device
+[sweep] done  gpt_ctx128 s42 | val_bpb 2.1199 | 11.8 min elapsed
+[sweep] start gpt_ctx256 s1337 on default device
+[sweep] done  gpt_ctx256 s1337 | val_bpb 2.1165 | 15.0 min elapsed
+[sweep] start gpt_ctx256 s42 on default device
+[sweep] done  gpt_ctx256 s42 | val_bpb 2.1152 | 18.3 min elapsed
+[sweep] start gpt_ctx512 s1337 on default device
+[sweep] done  gpt_ctx512 s1337 | val_bpb 2.1025 | 22.1 min elapsed
+[sweep] start gpt_ctx512 s42 on default device
+[sweep] done  gpt_ctx512 s42 | val_bpb 2.1035 | 26.0 min elapsed
+[sweep] start lstm_ctx64 s1337 on default device
+[sweep] done  lstm_ctx64 s1337 | val_bpb 2.1842 | 26.8 min elapsed
+[sweep] start lstm_ctx64 s42 on default device
+[sweep] done  lstm_ctx64 s42 | val_bpb 2.1770 | 27.6 min elapsed
+[sweep] start lstm_ctx128 s1337 on default device
+[sweep] done  lstm_ctx128 s1337 | val_bpb 2.1507 | 28.5 min elapsed
+[sweep] start lstm_ctx128 s42 on default device
+[sweep] done  lstm_ctx128 s42 | val_bpb 2.1468 | 29.4 min elapsed
+[sweep] start lstm_ctx256 s1337 on default device
+[sweep] done  lstm_ctx256 s1337 | val_bpb 2.1340 | 30.6 min elapsed
+[sweep] start lstm_ctx256 s42 on default device
+[sweep] done  lstm_ctx256 s42 | val_bpb 2.1404 | 31.8 min elapsed
+[sweep] start lstm_ctx512 s1337 on default device
+[sweep] done  lstm_ctx512 s1337 | val_bpb 2.1253 | 33.7 min elapsed
+[sweep] start lstm_ctx512 s42 on default device
+[sweep] done  lstm_ctx512 s42 | val_bpb 2.1335 | 35.6 min elapsed
+[sweep] finished (0 failed in this process). Analyze with:
+   python -m nanolm.analyze /Users/anurag_bodapally/local_folders/DL_assignment/DeepDataMiningLearning/DeepDataMiningLearning/llm/outputs/nanolm/sweeps/hw1_context

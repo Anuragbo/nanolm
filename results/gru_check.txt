@@ -1,0 +1,31 @@
+HW1 extra credit: GRU written gate by gate (GRUScratch) vs torch.nn.GRU
+torch 2.15.0; 2 layers, input 64, hidden 128, batch 8, 50 time steps, identical weights
+
+[cpu float64]  relative tolerance 1e-10  -> PASS
+    output                      max |diff| 2.220e-16   relative 5.112e-16
+    final hidden                max |diff| 2.220e-16   relative 3.529e-16
+    grad input                  max |diff| 4.441e-16   relative 7.012e-16
+    grad weights (worst param)  max |diff| 3.020e-14   relative 1.412e-15
+
+[cpu float32]  relative tolerance 1e-05  -> PASS
+    output                      max |diff| 1.192e-07   relative 2.561e-07
+    final hidden                max |diff| 1.490e-07   relative 2.189e-07
+    grad input                  max |diff| 2.086e-07   relative 2.995e-07
+    grad weights (worst param)  max |diff| 1.240e-05   relative 7.681e-07
+
+[mps float32]  relative tolerance 1e-05  -> PASS
+    output                      max |diff| 8.941e-08   relative 1.917e-07
+    final hidden                max |diff| 7.451e-08   relative 1.224e-07
+    grad input                  max |diff| 1.043e-07   relative 1.590e-07
+    grad weights (worst param)  max |diff| 4.292e-06   relative 2.946e-07
+
+[end-to-end training, float64 CPU] char LM on Tiny Shakespeare, 30 AdamW steps from the same init -> PASS (max loss gap 8.88e-16)
+    step   loss nn.GRU        loss GRUScratch
+       1   4.174715306797   4.174715306797
+       2   4.108223024135   4.108223024135
+       5   3.866586690073   3.866586690073
+      10   3.379025788988   3.379025788988
+      20   3.261735596862   3.261735596862
+      30   3.026139155453   3.026139155453
+
+OVERALL: PASS
